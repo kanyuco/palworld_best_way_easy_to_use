@@ -1,6 +1,7 @@
 import itertools
 import csv
 import re
+import webbrowser
 
 from pyecharts import options as opts
 from pyecharts.charts import Tree
@@ -109,6 +110,9 @@ def main():
     file_name = "_".join(input_items)
     with open(f"{file_name}.html", "w", encoding="utf-8") as file:
         file.write(final_html_code)
+    # 用默认浏览器打开html
+
+    webbrowser.open(f"{file_name}.html")
 
 
 if __name__ == "__main__":

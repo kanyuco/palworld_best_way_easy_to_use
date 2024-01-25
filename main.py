@@ -70,10 +70,22 @@ def find_combinations(items, data):
         iter_time += 1
     return combinations
 
+def get_input():
+    """
+    临时的输入函数
+    """
+    kind_number = int(input("请输入已有帕鲁的种类数量（至少两个）:"))
+    input_list = []
+    for i in range(0,kind_number):
+        print(f"第{i+1}个帕鲁：")
+        input_list.append(input())
+    return  input_list
+
 
 def main():
     file_path = 'combinations.csv'
-    input_items = ['棉悠悠', '幻悦蝶', '波霸牛']
+    input_items = get_input()
+    #input_items =  ['棉悠悠']
     data = read_csv(file_path)
     combinations = find_combinations(input_items, data)
     # 初始化一个字符串，用于保存所有图表的 HTML 代码
